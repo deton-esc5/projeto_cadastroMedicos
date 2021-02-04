@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <title>Cadastro de Médicos</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="cabecalho">
+      <div class="logo"><img src="/images/logo-medicina.png"></div>
+      <h1>Insira os Dados para Efetuar o Cadastro</h1>
+    </div>
+  
+    <div class="container">
+      
+      <form class="form-cadastro" action="/" method="POST" enctype="multipart/form-data">
+
+        <label for="nome">Nome do Médico: </label>
+        <input type="text" class="form-control" id="nome" name="nome" placeholder="Insira o nome"><br>
+
+        <label for="crm">CRM: </label>
+        <input oninput="mascara(this, 'crm')" type="text" class="form-control" id="crm" name="crm" placeholder="00.000.00"><br>
+
+        <label for="Telefone">Telefone: </label>
+        <input oninput="mascara(this, 'telefone')" type="text" class="form-control" id="telefone" name="telefone" placeholder="(00)0000-000">
+
+        <label for="celular">Celular: </label>
+        <input oninput="mascara(this, 'celular')" type="text" class="form-control" id="celular" name="celular" placeholder="(00)00000-0000"><br>
+        
+        <hr><br>
+
+        <h2>Endereço:</h2>
+   
+        <label for="cep">CEP: </label>
+        <input oninput="mascara(this, 'cep')" type="text" class="form-control" id="cep" name="cep" placeholder="00000-000"><br>
+
+        <label for="endereco">Rua / Av.: </label>
+        <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Seu endereco">
+
+        <label for="numero">Número: </label>
+        <input type="text" class="form-control" id="numero" name="numero" placeholder="Nº">
+
+        <label for="complemento">Complemento: </label>
+        <input type="text" class="form-control" id="complemento" name="complemento" placeholder="Tem complemento?"><br>
+
+        <label for="bairro">Bairro: </label>
+        <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Seu bairro">
+
+        <label for="cidade">Cidade: </label>
+        <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Sua cidade">
+
+        <label for="estado">UF: </label>
+        <input type="text" class="form-control" id="estado" name="estado" placeholder="UF"><br>
+
+        <hr><br>
+
+        <h2>Especialidades:</h2>
+
+        <label for="especialidade1">Especialidade 01: </label>
+        <select class="form-control" id="especialidade1" name="especialidade1" placeholder="Especialidade 01">
+
+          <option value="" disabled selected>Especialidade 01</option>
+          <option value="alergologia">Alergologia</option>
+          <option value="angiologia">Angiologia</option>
+          <option value="buco_maxilo">Buco Maxilo</option>
+          <option value="cardiologia_clinica">Cardiologia Clínica</option>
+          <option value="cardiologia_infantil">Cardiologia Infantil</option>
+          <option value="cirurgia_cabeca_pescoco">Cirurgia Cabeça e Pescoço</option>
+          <option value="cirurgia_Cardiaca">Cirurgia Cardíaca</option>
+          <option value="cirurgia_torax">Cirurgia do Tórax</option>         
+
+        </select>
+
+        <label for="especialidade2">Especialidade 02: </label>
+        <select class="form-control" id="especialidade2" name="especialidade2" placeholder="Especialidade 02">
+
+          <option value="" disabled selected>Especialidade 02</option>
+          <option value="alergologia">Alergologia</option>
+          <option value="angiologia">Angiologia</option>
+          <option value="buco_maxilo">Buco Maxilo</option>
+          <option value="cardiologia_clinica">Cardiologia Clínica</option>
+          <option value="cardiologia_infantil">Cardiologia Infantil</option>
+          <option value="cirurgia_cabeca_pescoco">Cirurgia Cabeça e Pescoço</option>
+          <option value="cirurgia_Cardiaca">Cirurgia Cardíaca</option>
+          <option value="cirurgia_torax">Cirurgia do Tórax</option>         
+
+        </select>
+
+        <hr><br><br>
+
+
+        <button type="submit" class="btn">Cadastrar</button>
+
+      </form>
+  </div>
+
+  <script src="/javascripts/mask-form.js"></script>
+  
+  </body>
+</html>
