@@ -9,33 +9,40 @@
 
     <div class="layout-lista">
         <h1> Médicos Cadastrados</h1>
-        <button>+ Cadastrar Médico</button>
+        <a href="/cadastro" class="btn-c">+ Cadastrar Médico</a>
+        
         <table>
+            
             <tr>
-            <th>Médicos Cadastrados</th>
-            <th>Editar</th>
-            <th>Deletar</th>
+            <th>ID</th>
+            <th>Nome do Médico</th>
+            <th>CRM</th>
+            <th>Telefone</th>
+            <th>Celular</th>
+            <th>Cidade</th>
+            <th>Estado</th>
+            <th></th>
+            <th></th>
             </tr>
+
+            <% medicos.forEach(medico => { %>
             <tr>
-            <td>linha 1, célula 1</td>
-            <td>linha 1, célula 2</td>
-            <td>linha 1, célula 2</td>
+                <td><%= medico.id %></td>
+                <td><%= medico.nome %></td>
+                <td><%= medico.crm %></td>
+                <td><%= medico.telefone %></td>
+                <td><%= medico.celular %></td>
+                <td><%= medico.cidade %></td>
+                <td><%= medico.estado %></td>
+                <td><a href="/editar/<%=medico.id %>" class="btn-e">Editar</a></td>
+                <td> <form class="form-cadastro" action="/deletar/<%= medico.id %>?_method=DELETE" method="post">
+                <button type="submit">Excluir</button></form></td>
             </tr>
+            <% }); %>
+
             
         </table>
     </div>
-
-    <h1>Médicos Cadastrados</h1>
-    <ul>
-    <% medicos.forEach(element => { %>
-        
-        <li>
-            <%= medicos.nome %>
-        </li>
-
-    <% }); %>
-
-    </ul>
     
 </body>
 </html>

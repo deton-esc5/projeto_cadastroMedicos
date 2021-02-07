@@ -28,7 +28,7 @@ function mascara(i,t){
         if (v.length == 3) i.value += ") ";
         if(v[5] == 9){
            i.setAttribute("maxlength", "16");
-           if (v.length == 11) i.value += "-";
+           if (v.length == 10) i.value += "-";
         }else{
            i.setAttribute("maxlength", "15");
            if (v.length == 10) i.value += "-";
@@ -41,4 +41,15 @@ function mascara(i,t){
      }
   
 
-}
+};
+
+/*const btn = document.querySelector(".btn") 
+
+btn.addEventListener(click, function convertNumber(){
+
+let cep = document.getElementById("cep")
+   cep.replace(/\D/gim, '');
+
+   console.log(cep)
+
+}*/

@@ -11,47 +11,36 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       nome: {
-        allowNull:false,
         type: Sequelize.STRING(120),
       },
       crm: {
-        allowNull:false,
-        type:Sequelize.INTEGER,
+        type:Sequelize.STRING,
       },
       telefone: {
-        allowNull:false,
         type:Sequelize.STRING,
       },
       celular: {
-        allowNull:false,
         type:Sequelize.STRING,
       },
       cep: {
-        allowNull:false,
-        type:Sequelize.INTEGER,
+        type:Sequelize.STRING,
       },
       rua: {
-        allowNull:false,
         type:Sequelize.STRING,
       },
       numero:{
-        allowNull:false,
         type:Sequelize.STRING,
       },
       complemento: {
-        allowNull:false,
         type:Sequelize.STRING,
       },
       bairro: {
-        allowNull:false,
         type:Sequelize.STRING,
       },
       cidade: {
-        allowNull:false,
         type:Sequelize.STRING,
       },
       estado: {
-        allowNull:false,
         type:Sequelize.STRING,
       },
       especialidade1: {
@@ -61,7 +50,6 @@ module.exports = {
             tableName:'Especialidades',
           key: 'id'}
         },
-        allowNull: false
       },
       especialidade2: {
         type: Sequelize.INTEGER,
@@ -70,7 +58,6 @@ module.exports = {
             tableName:'Especialidades',
           key: 'id'}
         },
-        allowNull: false
       },
       createdAt: {
         allowNull: false,

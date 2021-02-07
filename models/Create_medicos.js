@@ -9,10 +9,10 @@ module.exports = (sequelize, DataTypes) => {
 
   Create_medicos.init({
     nome: DataTypes.STRING,
-    crm: DataTypes.INTEGER,
+    crm: DataTypes.STRING,
     telefone: DataTypes.STRING,
     celular: DataTypes.STRING,
-    cep: DataTypes.INTEGER,
+    cep: DataTypes.STRING,
     rua: DataTypes.STRING,
     numero: DataTypes.STRING,
     complemento: DataTypes.STRING,
@@ -24,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Create_medicos',
+    timestamps:false,
   });
   return Create_medicos;
 };

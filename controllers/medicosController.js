@@ -8,9 +8,8 @@ const MedicosController = {
 index: async(req, res) =>{
     let medicos = await Create_medicos.findAll();
 
-    console.log(medicos)
 
-    return res.render('index', {medicos})
+    return res.render('index', {medicos});
 }
 
 }

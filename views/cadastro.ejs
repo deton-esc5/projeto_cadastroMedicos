@@ -9,10 +9,11 @@
       <div class="logo"><img src="/images/logo-medicina.png"></div>
       <h1>Insira os Dados para Efetuar o Cadastro</h1>
     </div>
+
   
     <div class="container">
       
-      <form class="form-cadastro" action="/" method="POST" enctype="multipart/form-data">
+      <form class="form-cadastro" action="/cadastro" method="post">
 
         <label for="nome">Nome do Médico: </label>
         <input type="text" class="form-control" id="nome" name="nome" placeholder="Insira o nome"><br>
@@ -33,8 +34,8 @@
         <label for="cep">CEP: </label>
         <input oninput="mascara(this, 'cep')" type="text" class="form-control" id="cep" name="cep" placeholder="00000-000"><br>
 
-        <label for="endereco">Rua / Av.: </label>
-        <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Seu endereco">
+        <label for="rua">Rua / Av.: </label>
+        <input type="text" class="form-control" id="endereco" name="rua" placeholder="Seu endereco">
 
         <label for="numero">Número: </label>
         <input type="text" class="form-control" id="numero" name="numero" placeholder="Nº">
@@ -59,30 +60,18 @@
         <select class="form-control" id="especialidade1" name="especialidade1" placeholder="Especialidade 01">
 
           <option value="" disabled selected>Especialidade 01</option>
-          <option value="alergologia">Alergologia</option>
-          <option value="angiologia">Angiologia</option>
-          <option value="buco_maxilo">Buco Maxilo</option>
-          <option value="cardiologia_clinica">Cardiologia Clínica</option>
-          <option value="cardiologia_infantil">Cardiologia Infantil</option>
-          <option value="cirurgia_cabeca_pescoco">Cirurgia Cabeça e Pescoço</option>
-          <option value="cirurgia_Cardiaca">Cirurgia Cardíaca</option>
-          <option value="cirurgia_torax">Cirurgia do Tórax</option>         
-
+          <% especialidades.forEach(especialidade => { %>
+          <option value="<%=especialidade.id%>"><%= especialidade.especialidade %></option>
+           <% }); %>
         </select>
 
         <label for="especialidade2">Especialidade 02: </label>
         <select class="form-control" id="especialidade2" name="especialidade2" placeholder="Especialidade 02">
 
           <option value="" disabled selected>Especialidade 02</option>
-          <option value="alergologia">Alergologia</option>
-          <option value="angiologia">Angiologia</option>
-          <option value="buco_maxilo">Buco Maxilo</option>
-          <option value="cardiologia_clinica">Cardiologia Clínica</option>
-          <option value="cardiologia_infantil">Cardiologia Infantil</option>
-          <option value="cirurgia_cabeca_pescoco">Cirurgia Cabeça e Pescoço</option>
-          <option value="cirurgia_Cardiaca">Cirurgia Cardíaca</option>
-          <option value="cirurgia_torax">Cirurgia do Tórax</option>         
-
+          <% especialidades.forEach(especialidade => { %>
+          <option value="<%=especialidade.id%>"><%= especialidade.especialidade %></option>
+          <% }); %>
         </select>
 
         <hr><br><br>

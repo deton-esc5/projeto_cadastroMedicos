@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <title>Cadastro de Médicos</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="cabecalho">
+      <div class="logo"><img src="/images/logo-medicina.png"></div>
+      <h1>Insira os Dados para Efetuar o Cadastro</h1>
+    </div>
+
+  
+    <div class="container">
+      
+      <form class="form-cadastro" action="/editar/<%= medico.id %>?_method=PUT" method="post">
+
+        <label for="nome">Nome do Médico: </label>
+        <input type="text" class="form-control" id="nome" name="nome" value="<%= medico.nome %>"><br>
+
+        <label for="crm">CRM: </label>
+        <input oninput="mascara(this, 'crm')" type="text" class="form-control" id="crm" name="crm" value="<%= medico.crm %>"><br>
+
+        <label for="Telefone">Telefone: </label>
+        <input oninput="mascara(this, 'telefone')" type="text" class="form-control" id="telefone" name="telefone" value="<%= medico.telefone %>">
+
+        <label for="celular">Celular: </label>
+        <input oninput="mascara(this, 'celular')" type="text" class="form-control" id="celular" name="celular" value="<%= medico.celular %>"><br>
+        
+        <hr><br>
+
+        <h2>Endereço:</h2>
+   
+        <label for="cep">CEP: </label>
+        <input oninput="mascara(this, 'cep')" type="text" class="form-control" id="cep" name="cep" value="<%= medico.cep %>"><br>
+
+        <label for="rua">Rua / Av.: </label>
+        <input type="text" class="form-control" id="endereco" name="rua" value="<%= medico.rua %>">
+
+        <label for="numero">Número: </label>
+        <input type="text" class="form-control" id="numero" name="numero" value="<%= medico.numero %>">
+
+        <label for="complemento">Complemento: </label>
+        <input type="text" class="form-control" id="complemento" name="complemento" value="<%= medico.complemento %>"><br>
+
+        <label for="bairro">Bairro: </label>
+        <input type="text" class="form-control" id="bairro" name="bairro" value="<%= medico.bairro %>">
+
+        <label for="cidade">Cidade: </label>
+        <input type="text" class="form-control" id="cidade" name="cidade" value="<%= medico.cidade %>">
+
+        <label for="estado">UF: </label>
+        <input type="text" class="form-control" id="estado" name="estado" value="<%= medico.estado %>"><br>
+
+        <hr><br>
+
+        <h2>Especialidades:</h2>
+
+        <label for="especialidade1">Especialidade 01: </label>
+        <select class="form-control" id="especialidade1" name="especialidade1" placeholder="Especialidade 01">
+
+            <% especialidades.forEach(especialidade => { %>
+            <% if (especialidade.id == medico.especialidade1) { %>
+                <option value="<%=especialidade.id%>" selected><%= especialidade.especialidade %></option>
+            <% } else{ %>
+                <option value="<%=especialidade.id%>"><%= especialidade.especialidade %></option>
+            <% }; %>
+
+            <% }); %>
+        </select>
+
+        <label for="especialidade2">Especialidade 02: </label>
+        <select class="form-control" id="especialidade2" name="especialidade2" placeholder="Especialidade 02">
+
+            <% especialidades.forEach(especialidade => { %>
+                <% if (especialidade.id == medico.especialidade2) { %>
+                    <option value="<%=especialidade.id%>" selected><%= especialidade.especialidade %></option>
+                <% } else{ %>
+                    <option value="<%=especialidade.id%>"><%= especialidade.especialidade %></option>
+                <% }; %>
+
+                <% }); %>
+            </select>
+
+        <hr><br><br>
+
+
+        <button type="submit" class="btn">Atualizar</button>
+
+      </form>
+  </div>
+
+  <script src="/javascripts/mask-form.js"></script>
+  
+  </body>
+</html>

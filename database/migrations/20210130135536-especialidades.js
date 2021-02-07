@@ -12,12 +12,21 @@ module.exports = {
     
       },
       especialidade: {
-        allowNull:false,
         type: Sequelize.STRING(120),
-      }
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+        defaultValue: new Date(),
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+        defaultValue: new Date(),
+      },
       
       });
-    
+         
   },
 
   down: async (queryInterface, Sequelize) => {
