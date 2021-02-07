@@ -4,14 +4,10 @@ const Op = Sequelize.Op
 
 const MedicosCadastro = {
 
-    index: async(req, res) =>{
+    create: async(req, res) =>{
         let especialidades = await Especialidades.findAll();
      
         return res.render('cadastro', {especialidades});
-    },
-
-    create:(req,res) => {
-        return res.render('cadastro')
     },
         
     store: async(req, res) => {

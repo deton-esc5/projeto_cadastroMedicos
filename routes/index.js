@@ -4,17 +4,20 @@ const MedicosController = require('../controllers/medicosController');
 const MedicosCadastro = require('../controllers/medicosCadastro');
 const MedicosEditar = require('../controllers/medicosEditar');
 const MedicosDeletar = require('../controllers/medicosDeletar');
+const MedicoConsultar = require('../controllers/medicoConsultar')
 
 /* GET home page. */
 router.get('/',MedicosController.index);
 
-router.get('/cadastro', MedicosCadastro.index, MedicosCadastro.create);
-router.post('/cadastro', MedicosCadastro.store);
+router.get('/medico/cadastro', MedicosCadastro.create);
+router.post('/medico/cadastro', MedicosCadastro.store);
 
-router.get('/editar/:id', MedicosEditar.edit)
-router.put('/editar/:id', MedicosEditar.update)
+router.get('/medico/consultar/:id', MedicoConsultar.index)
 
-router.delete('/deletar/:id', MedicosDeletar.destroy);
+router.get('/medico/editar/:id', MedicosEditar.edit)
+router.put('/medico/editar/:id', MedicosEditar.update)
+
+router.delete('/medico/deletar/:id', MedicosDeletar.destroy);
 
 
 

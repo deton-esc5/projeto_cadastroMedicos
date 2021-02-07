@@ -9,7 +9,7 @@
 
     <div class="layout-lista">
         <h1> Médicos Cadastrados</h1>
-        <a href="/cadastro" class="btn-c">+ Cadastrar Médico</a>
+        <a href="/medico/cadastro" class="btn-c">+ Cadastrar Médico</a>
         
         <table>
             
@@ -23,6 +23,7 @@
             <th>Estado</th>
             <th></th>
             <th></th>
+            <th></th>
             </tr>
 
             <% medicos.forEach(medico => { %>
@@ -34,9 +35,12 @@
                 <td><%= medico.celular %></td>
                 <td><%= medico.cidade %></td>
                 <td><%= medico.estado %></td>
-                <td><a href="/editar/<%=medico.id %>" class="btn-e">Editar</a></td>
-                <td> <form class="form-cadastro" action="/deletar/<%= medico.id %>?_method=DELETE" method="post">
-                <button type="submit">Excluir</button></form></td>
+                <td> <form class="form-cadastro" action="/medico/consultar/<%=medico.id %>">
+                    <button type="submit">Consultar</button></form></td>
+                <td> <form class="form-cadastro" action="/medico/editar/<%=medico.id %>">
+                    <button type="submit">Editar</button></form></td>
+                <td> <form class="form-cadastro" action="/medico/deletar/<%= medico.id %>?_method=DELETE" method="post">
+                    <button type="submit">Excluir</button></form></td>
             </tr>
             <% }); %>
 
