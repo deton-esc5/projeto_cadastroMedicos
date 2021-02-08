@@ -27,7 +27,7 @@ function mascara(i,t){
         if (v.length == 1) i.value = "(" + i.value;
         if (v.length == 3) i.value += ") ";
         if(v[5] == 9){
-           i.setAttribute("maxlength", "16");
+           i.setAttribute("maxlength", "15");
            if (v.length == 10) i.value += "-";
         }else{
            i.setAttribute("maxlength", "15");

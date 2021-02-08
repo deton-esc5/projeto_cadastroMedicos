@@ -1,15 +1,19 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-    <title>Cadastro de Médicos</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <div class="cabecalho">
-      <div class="logo"><img src="/images/logo-medicina.png"></div>
-      <h1>Insira os Dados para Efetuar o Cadastro</h1>
-    </div>
+<%- include('partials/header.ejs'); %>
 
+<% if (typeof(errors) != "undefined") { %>
+  <p id="paragrafoError">ERRO NO CADASTRO DO MÉDICO</p>
+  <ol>
+
+      <% errors.forEach((error) => { %>
+
+          <li id="errorCadastro"><%= error.msg %> </li>
+
+      <% }); %>
+
+  </ol>
+<% } %>
+
+    <h1>Insira os Dados para Efetuar o Cadastro</h1>
   
     <div class="container">
       
@@ -35,7 +39,7 @@
         <input oninput="mascara(this, 'cep')" type="text" class="form-control" id="cep" name="cep" placeholder="00000-000"><br>
 
         <label for="rua">Rua / Av.: </label>
-        <input type="text" class="form-control" id="endereco" name="rua" placeholder="Seu endereco">
+        <input type="text" class="form-control" id="logradouro" name="rua">
 
         <label for="numero">Número: </label>
         <input type="text" class="form-control" id="numero" name="numero" placeholder="Nº">
@@ -47,10 +51,10 @@
         <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Seu bairro">
 
         <label for="cidade">Cidade: </label>
-        <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Sua cidade">
+        <input type="text" class="form-control" id="localidade" name="cidade" placeholder="Sua cidade">
 
         <label for="estado">UF: </label>
-        <input type="text" class="form-control" id="estado" name="estado" placeholder="UF"><br>
+        <input type="text" class="form-control" id="uf" name="estado" placeholder="UF"><br>
 
         <hr><br>
 
@@ -83,6 +87,7 @@
   </div>
 
   <script src="/javascripts/mask-form.js"></script>
+  <script src="/javascripts/main.js"></script>
   
   </body>
 </html>

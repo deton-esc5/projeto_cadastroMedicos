@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-    <title>Cadastro de Médicos</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <div class="cabecalho">
-      <div class="logo"><img src="/images/logo-medicina.png"></div>
-      <h1>Insira os Dados para Efetuar o Cadastro</h1>
-    </div>
+<%- include('partials/header.ejs'); %>
 
-  
+    <h1>Editar Dados do Médico</h1>
+
     <div class="container">
       
       <form class="form-cadastro" action="/medico/editar/<%= medico.id %>?_method=PUT" method="post">

@@ -13,31 +13,12 @@ body {
 
 body h1{
   color: #22557e;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 body h2 {
   margin-bottom: 10px;
-}
-
-.layout-lista {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
-
-.tabela table {
-  width: 90%;
-  table-layout: fixed;
-  border-collapse: collapse;
-
-}
-
-.tabela table, th, td {
-  color: #22557e;
-  border: 1px solid rgba(1, 32, 23, 0.35);
 }
 
 .cabecalho {
@@ -128,4 +109,220 @@ body h2 {
   text-decoration: none;
   font-size: 16px;
   cursor: pointer;
+}
+
+.countPage a{
+  color: #22557e;
+  text-decoration: none;
+  font-size: 18px;
+}
+.countPage ul li{
+  display:inline-block;
+  margin-bottom: 20px;
+}
+
+ table {
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-family: arial;
+}
+
+.table {
+  border-bottom: #999999 solid 1px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+  border-right: #999999 solid 1px;
+  font-size: 16px;
+  padding: 8px;
+  line-height: 20px;
+  text-align: left;
+  vertical-align: middle;
+  color: rgb(0, 71, 50);
+}
+
+.table td:last-child {
+   border-right: 0;
+}
+
+.table thead th {
+  font-weight: normal;
+  background-color: #22557e;
+  color: #fff;
+  font-size: 15px;
+}
+
+.table tbody > tr:nth-child(odd) > td,
+.table tbody > tr:nth-child(odd) > th {
+  background-color: #f8f8f8;
+}
+
+
+@media (max-width: 767px) { 
+
+.table-responsive {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.table-responsive thead,
+.table-responsive tbody,
+.table-responsive th,
+.table-responsive td,
+.table-responsive tr {
+  display: block;
+}
+.table-responsive td,
+.table-responsive th {
+  height: 35px;
+}
+
+.table-responsive thead {
+  float: left;
+}
+
+.table-responsive tbody {
+  width: auto;
+  position: relative;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+}
+
+.table-responsive tbody tr {
+  display: inline-block;
+}
+
+
+.table td:last-child {
+   border-right: #999999 solid 1px;
+}
+
+
+}
+
+.btn-consulta{
+  background-color: green;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 2px;
+  color: white;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-editar{
+  background-color: yellow;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 2px;
+  color: black;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-deletar{
+  background-color: red;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 2px;
+  color: white;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-cadastrar {
+  background-color: rgb(0, 71, 50);
+  font-size: 14px;
+  padding: 10px;
+  margin: 20px;
+  width: 250px;
+  border-radius: 10px;
+  color: white;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: auto;
+  justify-content: center;
+}
+
+.btn-cadastrar a{
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+#icon-medico{
+height: 40px;
+padding-right:5px;
+}
+
+#paragrafoError{
+  font-size: 14px;
+  color: red;
+  text-align: center;
+}
+
+#errorCadastro{
+  font-size: 12px;
+  color: red;
+  text-align: center;
+}
+
+
+#divBusca{
+  background-color:#E0EEEE;
+  border:solid 2px  rgb(0, 71, 50);
+  border-radius:10px;
+  width:300px;
+  height:32px;
+}
+
+.topoLista{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 20px;
+  align-self: center;
+  justify-self: auto;
+}
+
+#txtBusca{
+  float:left;
+  background-color:transparent;
+  padding-left:5px;
+  font-size:14px;
+  border:none;
+  height:32px;
+  width:191px;
+}
+
+#btnBusca{
+  border:none;
+  float:left;
+  height:30px;
+  border-radius:0 7px 7px 0;
+  width:85px;
+  font-weight:bold;
+  color: white;
+  background: rgb(0, 71, 50);
+  cursor: pointer;
+}
+
+#divBusca img{
+  float:left;
+  padding-left: 2px;
+  padding-top: 2px;
+  height: 20px;
 }

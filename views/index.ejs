@@ -1,31 +1,53 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Médicos</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
+<%- include('partials/header.ejs'); %>
 
-    <div class="layout-lista">
-        <h1> Médicos Cadastrados</h1>
-        <a href="/medico/cadastro" class="btn-c">+ Cadastrar Médico</a>
-        
-        <table>
+    <h1>Lista de Médicos Cadastrados</h1>
+
+    <div class="topoLista">
+
+        <div class="btn-cadastrar"><a href="/medico/cadastro">
+            <img id="icon-medico" src="/images/user-md-solid.svg"> Cadastrar Médico</a>
+        </div>
+
+        <div id="divBusca">
+            <form action="/medico/buscar" method="get">
+            <img src="/images/search-solid.svg" alt="Buscar..."/>
+            <input type="text" id="txtBusca" placeholder="Buscar..." name="key"/>
+            <button type="submit" id="btnBusca">Buscar</button>
+        </form>
+          </div>
+
+    </div>
+
+    <div class="container">
+        <nav class="countPage">
+        <ul>
             
-            <tr>
-            <th>ID</th>
-            <th>Nome do Médico</th>
-            <th>CRM</th>
-            <th>Telefone</th>
-            <th>Celular</th>
-            <th>Cidade</th>
-            <th>Estado</th>
-            <th></th>
-            <th></th>
-            <th></th>
-            </tr>
+            <% for (let nrPagina = 1; nrPagina <= totalPagina; nrPagina ++) { %>
+                <li><a href="?page=<%= nrPagina %>"><%= nrPagina + " |" %> </a></li>
+            <% } %>
+        </ul>
+    </nav>
+    </div>
 
+    <table class="table table-responsive">
+  
+        <thead> 
+          <tr>
+              <th>ID</th>
+              <th>Nome do Médico</th>
+              <th>CRM</th>	
+              <th>Telefone</th>	
+              <th>Celular</th>	
+              <th>Cidade</th>	
+              <th>Estado</th>	
+              <th>C</th>	
+              <th>E</th>	
+              <th>D</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        
             <% medicos.forEach(medico => { %>
             <tr>
                 <td><%= medico.id %></td>
@@ -35,18 +57,20 @@
                 <td><%= medico.celular %></td>
                 <td><%= medico.cidade %></td>
                 <td><%= medico.estado %></td>
-                <td> <form class="form-cadastro" action="/medico/consultar/<%=medico.id %>">
-                    <button type="submit">Consultar</button></form></td>
-                <td> <form class="form-cadastro" action="/medico/editar/<%=medico.id %>">
-                    <button type="submit">Editar</button></form></td>
-                <td> <form class="form-cadastro" action="/medico/deletar/<%= medico.id %>?_method=DELETE" method="post">
-                    <button type="submit">Excluir</button></form></td>
+                <td> <form action="/medico/consultar/<%=medico.id %>">
+                    <button class="btn-consulta" type="submit">Consultar</button></form></td>
+                <td> <form action="/medico/editar/<%=medico.id %>">
+                    <button class="btn-editar" type="submit">Editar</button></form></td>
+                <td> <form action="/medico/deletar/<%= medico.id %>?_method=DELETE" method="post">
+                    <button class="btn-deletar" type="submit">Excluir</button></form></td>
             </tr>
-            <% }); %>
+            <% }); %> 
 
-            
-        </table>
-    </div>
-    
-</body>
+      
+        </tbody>
+        
+</table>
+
+<body>
+  
 </html>
