@@ -4,7 +4,7 @@ Criar um Schema no mySQL com o nome cadastro_medicos, adicionar ele na configura
 
 Fazer o mmigrate com as migrations já configuradas no projeto.
 
-instalar todas as dependências NPM utilizadas no projeto
+instalar todas as dependências NPM utilizadas no projeto.
 
 Para a criação deste sistema foi utilizados as seguintes dependências do NPM:
 
