@@ -4,6 +4,8 @@ const MedicosController = require('../controllers/medicosController')
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op
 
+let totalPagina = MedicosController.index.totalPagina
+
 const BuscarController = {
 
 search: async(req, res) =>{
@@ -15,12 +17,13 @@ search: async(req, res) =>{
             nome:{
                 [Op.like]:`%${key}%`
             },
+
         },
-        
+            
     });
 
 
-    return res.render('index', {medicos});
+    return res.render('index', {medicos, totalPagina});
 },
 
 }
